@@ -41,13 +41,15 @@ export default function Game() {
                 {/* Re-propagate context because contexts are not shared between renderers.
 https://github.com/michalochman/react-pixi-fiber/issues/145#issuecomment-531549215 */}
                 <ConvexProvider client={convex}>
-                  <PixiGame
-                    worldId={worldId}
-                    width={width}
-                    height={height}
-                    historicalTime={historicalTime}
-                    setSelectedElement={setSelectedElement}
-                  />
+                  <SessionProvider storageLocation={'sessionStorage'}>
+                    <PixiGame
+                      worldId={worldId}
+                      width={width}
+                      height={height}
+                      historicalTime={historicalTime}
+                      setSelectedElement={setSelectedElement}
+                    />
+                  </SessionProvider>
                 </ConvexProvider>
               </Stage>
             </div>

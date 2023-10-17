@@ -8,6 +8,5 @@
 
 
 # todo:
-1. vercel deployment?
-2. multiplayer
-3. 
+1. multiplayer
+2. vercel deployment?
