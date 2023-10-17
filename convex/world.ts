@@ -107,7 +107,7 @@ export const userStatus = query({
       .withIndex('active', (q) =>
         q.eq('worldId', world._id).eq('active', true).eq(
           'human',
-          'Testing', // identity.tokenIdentifier
+          'You', // identity.tokenIdentifier
         ),
       )
       .first();
@@ -137,7 +137,7 @@ export const joinWorld = mutation({
       .withIndex('active', (q) =>
         q.eq('worldId', world._id).eq('active', true).eq(
           'human',
-          'Testing', // identity.tokenIdentifier
+          'You', // identity.tokenIdentifier
         ),
       )
       .first();
@@ -149,12 +149,12 @@ export const joinWorld = mutation({
       name: 'join',
       args: {
         // name: identity.givenName,
-        name: 'Testing',
+        name: 'You',
         character: characters[Math.floor(Math.random() * characters.length)].name,
         // description: `${identity.givenName} is a human player`,
-        description: `Testing is a human player`,
+        description: `You are a human player`,
         // tokenIdentifier,
-        tokenIdentifier: 'Testing',
+        tokenIdentifier: 'You',
       },
     });
   },
@@ -179,7 +179,7 @@ export const leaveWorld = mutation({
       .withIndex('active', (q) =>
         q.eq('worldId', world._id).eq('active', true).eq(
           'human',
-          'Testing', // tokenIdentifier
+          'You', // tokenIdentifier
         ),
       )
       .first();
